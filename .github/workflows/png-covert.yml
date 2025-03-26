@@ -20,11 +20,6 @@ jobs:
 
       - name: 'Install nix'
         uses: DeterminateSystems/nix-installer-action@v9
-
-      - name: Switch to the other branch
-        run: |
-          git switch PNG
-        shell: pwsh
       
       - name: 'Create PNG'
         if: steps.restore-nix-store.outputs.cache-hit != 'true'
@@ -42,6 +37,6 @@ jobs:
           if ($LASTEXITCODE -ne 0)
           {
               & git commit -m "Building PNG from SVG"
-              & git push origin PNG
+              & git push origin main
           }
       
