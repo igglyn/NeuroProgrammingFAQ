@@ -14,7 +14,7 @@
   <tspan x="190" dy="1.2em">If your called a nerd or need the help of nerds. You are in the correct place.</tspan>
 </text>
 
-<foreignObject x="0" y="70" width="190" height="70">
+<foreignObject x="10" y="78" width="170" height="70">
   <!-- WHY ARE YOU PLACED GLOBALLY!!!!!!!!!!!!!! -->
   <style>
   .obj2 * {
@@ -29,28 +29,31 @@
   body.obj2 {
     background-color: color-mix(in oklab, hsl(220 calc(1*6.522%) 18.039% /1) 100%, #000 0%)
   }
-  body div {
+  body {
     margin:auto;
     padding:10px
   }
   </style>
+
+
+
   <!-- Yoinked from discord itself -->
   <body class="obj2" xmlns="http://www.w3.org/1999/xhtml">
-    <div>
-        <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-        <path fill="currentColor" fill-rule="evenodd" d="M10.99 3.16A1 1 0 1 0 9 2.84L8.15 8H4a1 1 0 0 0 0 2h3.82l-.67 4H3a1 1 0 1 0 0 2h3.82l-.8 4.84a1 1 0 0 0 1.97.32L8.85 16h4.97l-.8 4.84a1 1 0 0 0 1.97.32l.86-5.16H20a1 1 0 1 0 0-2h-3.82l.67-4H21a1 1 0 1 0 0-2h-3.82l.8-4.84a1 1 0 1 0-1.97-.32L15.15 8h-4.97l.8-4.84ZM14.15 14l.67-4H9.85l-.67 4h4.97Z" clip-rule="evenodd"></path>
-        </svg>
-        <p>programming</p>
-    </div>
+    <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <path fill="currentColor" fill-rule="evenodd" d="M10.99 3.16A1 1 0 1 0 9 2.84L8.15 8H4a1 1 0 0 0 0 2h3.82l-.67 4H3a1 1 0 1 0 0 2h3.82l-.8 4.84a1 1 0 0 0 1.97.32L8.85 16h4.97l-.8 4.84a1 1 0 0 0 1.97.32l.86-5.16H20a1 1 0 1 0 0-2h-3.82l.67-4H21a1 1 0 1 0 0-2h-3.82l.8-4.84a1 1 0 1 0-1.97-.32L15.15 8h-4.97l.8-4.84ZM14.15 14l.67-4H9.85l-.67 4h4.97Z" clip-rule="evenodd">
+        </path>
+    </svg>
+    <p>programming</p>
   </body>
 </foreignObject>
 
 
 
 
-  <text x="20" y="200" fill="#EEE" font-size="25" font-weight="bold">I want X part of Neuro/Evil:</text>
-  <foreignObject x="10" y="200" width="700" height="500">
-    <style>
+<text x="20" y="200" fill="#EEE" font-size="25" font-weight="bold">I want X part of Neuro/Evil:</text>
+
+<foreignObject x="10" y="200" width="700" height="500">
+  <style>
       body.obj1 th,
       body.obj1 td {
         color: #EEE;
