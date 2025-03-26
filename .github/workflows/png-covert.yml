@@ -20,25 +20,19 @@ jobs:
           path: /nix/store
           key: ${{ runner.os }}-png
 
-      - name: 'move nix-store to correct location'
-        if: steps.restore-nix-store.outputs.cache-hit == 'true'
-        run: |
-          ls /nix/store
-
       - name: 'Install nix'
         uses: DeterminateSystems/nix-installer-action@v9
-
-      - name: 'sanity check'
-        if: steps.restore-nix-store.outputs.cache-hit == 'true'
-        run: |
-          ls /nix/store
-          mv / /
 
       - name: 'Undoing Nix jank'
         run: sudo chown root:nixbld /nix/store
       
       - name: 'Create PNG'
+        if: steps.restore-nix-store.outputs.cache-hit != 'true'
         run: nix-shell -p firefox --command "firefox -screenshot file://\$(realpath FAQ.svg) --window-size 1280,720"
+
+      - name: 'Create PNG cached Firefox'
+        if: steps.restore-nix-store.outputs.cache-hit -= 'true'
+        run: /nix/store/*/bin/firefox --command "firefox -screenshot file://\$(realpath FAQ.svg) --window-size 1280,720"
 
       - name: 'Upload PNG Artifact'
         uses: actions/upload-artifact@v4
