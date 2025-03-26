@@ -9,14 +9,12 @@ jobs:
         uses: actions/checkout@v4
 
       - name: 'Nix jank'
-        if: steps.cache.outputs.cache-hit == 'true'
         run: |
           sudo mkdir -p /nix/store
           sudo chown runner:nixbld /nix/store
 
       - name: 'Restore nix-store'
         id: restore-nix-store
-        if: steps.cache.outputs.cache-hit == 'true'
         uses: actions/cache/restore@v4.2.3
         with:
           path: /nix/store
@@ -43,4 +41,4 @@ jobs:
         uses: actions/cache/save@v4.2.3
         with:
           path: /nix/store
-          key: ${{ steps.cache.outputs.cache-primary-key }}
+          key: ${{ steps.restore-nix-store.outputs.cache-primary-key }}
