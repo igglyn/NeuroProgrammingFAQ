@@ -6,15 +6,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 'checkout repo'
-      - uses: actions/checkout@v4
+        uses: actions/checkout@v4
       
       - name: 'Create PNG'
-      - run: |
+        run: |
           apt install firefox
           firefox -headless -screenshot file://$(realpath FAQ.svg)
 
       - name: 'Upload Artifact'
-      - uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v4
         with:
           name: my-artifact
           path: ./screenshot.png
