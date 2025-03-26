@@ -8,17 +8,20 @@ jobs:
       - name: 'checkout repo'
         uses: actions/checkout@v4
 
-      - name: Install nix
+      - name: 'Install nix'
         uses: DeterminateSystems/nix-installer-action@v9
       
       - name: 'Create PNG'
-        run: |
-          nix-shell -p firefox
-          firefox -headless -screenshot file://$(realpath FAQ.svg) --window-size 1280,720
+        run: nix-shell -p firefox --command "firefox -screenshot file://\$(realpath FAQ.svg) --window-size 1280,720"
 
-      - name: 'Upload Artifact'
+      - name: 'Upload PNG Artifact'
         uses: actions/upload-artifact@v4
         with:
-          name: my-artifact
+          name: FAQpng
           path: ./screenshot.png
           retention-days: 5
+
+      - name: 'Cache Firefox'
+        uses: actions/cache@v4.2.3
+        with:
+          path: /nix/store
