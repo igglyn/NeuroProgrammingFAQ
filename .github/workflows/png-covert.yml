@@ -22,7 +22,9 @@ jobs:
 
       - name: 'move nix-store to correct location'
         if: steps.restore-nix-store.outputs.cache-hit == 'true'
-        run: mv NeuroProgrammingFAQ /nix/store
+        run: |
+          ls .
+          mv NeuroProgrammingFAQ /nix/store
 
       - name: 'Install nix'
         uses: DeterminateSystems/nix-installer-action@v9
