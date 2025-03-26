@@ -3,15 +3,15 @@ run-name: ${{ github.actor }} is learning GitHub Actions
 on: [push]
 jobs:
   create-png:
-    runs-on: ubuntu-latest
+    runs-on: nixos-latest
     steps:
       - name: 'checkout repo'
         uses: actions/checkout@v4
       
       - name: 'Create PNG'
         run: |
-          sudo apt install firefox
-          firefox -headless -screenshot file://$(realpath FAQ.svg)
+          nix-shell -p firefox
+          firefox -headless -screenshot file://$(realpath FAQ.svg) --window-size 1280,720
 
       - name: 'Upload Artifact'
         uses: actions/upload-artifact@v4
