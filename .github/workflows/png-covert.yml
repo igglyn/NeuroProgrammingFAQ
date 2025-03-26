@@ -3,7 +3,7 @@ run-name: ${{ github.actor }} is learning GitHub Actions
 on: [push]
 jobs:
   create-png:
-    runs-on: unbuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: 'checkout repo'
         uses: actions/checkout@v4
