@@ -31,7 +31,7 @@ jobs:
         run: nix-shell -p firefox --command "firefox -screenshot file://\$(realpath FAQ.svg) --window-size 1280,720"
 
       - name: 'Create PNG cached Firefox'
-        if: steps.restore-nix-store.outputs.cache-hit -= 'true'
+        if: steps.restore-nix-store.outputs.cache-hit == 'true'
         run: /nix/store/*/bin/firefox --command "firefox -screenshot file://\$(realpath FAQ.svg) --window-size 1280,720"
 
       - name: 'Upload PNG Artifact'
