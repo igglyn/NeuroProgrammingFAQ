@@ -21,7 +21,7 @@ jobs:
           key: ${{ runner.os }}-png
 
       - name: 'move nix-store to correct location'
-        if: steps.restore-nix-store.outputs.cache-hit != 'true'
+        if: steps.restore-nix-store.outputs.cache-hit == 'true'
         run: mv NeuroProgrammingFAQ /nix/store
 
       - name: 'Install nix'
