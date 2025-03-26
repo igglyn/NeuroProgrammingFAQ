@@ -3,10 +3,13 @@ run-name: ${{ github.actor }} is learning GitHub Actions
 on: [push]
 jobs:
   create-png:
-    runs-on: nixos-latest
+    runs-on: unbuntu-latest
     steps:
       - name: 'checkout repo'
         uses: actions/checkout@v4
+
+      - name: Install nix
+        uses: DeterminateSystems/nix-installer-action@v9
       
       - name: 'Create PNG'
         run: |
