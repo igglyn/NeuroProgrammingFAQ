@@ -10,21 +10,23 @@ jobs:
 
       - name: 'Nix jank'
         run: |
-          sudo mkdir -p /nix/store
-          sudo chown runner:runner /nix/store
+          sudo mkdir /nix
+          sudo chown runner:runner /nix
 
       - name: 'Restore nix-store'
         id: restore-nix-store
         uses: actions/cache/restore@v4.2.3
         with:
-          path: /nix/store
-          key: ${{ runner.os }}-png
+          path: /nix
+          key: nix-cache-png
 
       - name: 'Install nix'
         uses: DeterminateSystems/nix-installer-action@v9
 
       - name: 'Undoing Nix jank'
-        run: sudo chown root:nixbld /nix/store
+        run: |
+          sudo chown -R root:root /nix
+          sudo chown root:nixbld /nix/store
       
       - name: 'Create PNG'
         if: steps.restore-nix-store.outputs.cache-hit != 'true'
@@ -32,18 +34,20 @@ jobs:
 
       - name: 'Create PNG cached Firefox'
         if: steps.restore-nix-store.outputs.cache-hit == 'true'
-        run: /nix/store/*/bin/firefox --command "firefox -screenshot file://\$(realpath FAQ.svg) --window-size 1280,720"
-
+        run: |
+          /nix/store/*/bin/firefox --command "firefox -screenshot file://\$(realpath FAQ.svg) --window-size 1280,720"
+          mv screenshot.png FAQ.png
+          
       - name: 'Upload PNG Artifact'
         uses: actions/upload-artifact@v4
         with:
           name: FAQpng
-          path: ./screenshot.png
+          path: ./FAQ.png
           retention-days: 5
 
       - name: 'Cache Firefox'
         if: steps.restore-nix-store.outputs.cache-hit != 'true'
         uses: actions/cache/save@v4.2.3
         with:
-          path: /nix/store
+          path: /nix
           key: ${{ steps.restore-nix-store.outputs.cache-primary-key }}
