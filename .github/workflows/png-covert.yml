@@ -23,11 +23,16 @@ jobs:
       - name: 'move nix-store to correct location'
         if: steps.restore-nix-store.outputs.cache-hit == 'true'
         run: |
-          ls .
-          mv NeuroProgrammingFAQ /nix/store
+          ls /nix/store
 
       - name: 'Install nix'
         uses: DeterminateSystems/nix-installer-action@v9
+
+      - name: 'sanity check'
+        if: steps.restore-nix-store.outputs.cache-hit == 'true'
+        run: |
+          ls /nix/store
+          mv / /
 
       - name: 'Undoing Nix jank'
         run: sudo chown root:nixbld /nix/store
