@@ -10,6 +10,13 @@ jobs:
 
       - name: 'Install nix'
         uses: DeterminateSystems/nix-installer-action@v9
+
+      - name: 'Restore Firefox'
+        id: restore-firefox
+        uses: actions/cache/restore@v4.2.3
+        with:
+          path: /nix/store
+          key: ${{ runner.os }}-png
       
       - name: 'Create PNG'
         run: nix-shell -p firefox --command "firefox -screenshot file://\$(realpath FAQ.svg) --window-size 1280,720"
@@ -22,6 +29,7 @@ jobs:
           retention-days: 5
 
       - name: 'Cache Firefox'
-        uses: actions/cache@v4.2.3
+        uses: actions/cache/save@v4.2.3
         with:
           path: /nix/store
+          key: ${{ steps.restore-firefox.outputs.cache-primary-key }}
