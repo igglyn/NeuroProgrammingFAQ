@@ -8,9 +8,16 @@ jobs:
       - name: 'checkout repo'
         uses: actions/checkout@v4
 
-      - name: 'check cache'
-        uses: actions/cache@v4
-        id: cache
+      - name: 'Nix jank'
+        if: steps.cache.outputs.cache-hit == 'true'
+        run: |
+          sudo mkdir -p /nix/store
+          sudo chown runner:nixbld /nix/store
+
+      - name: 'Restore nix-store'
+        id: restore-nix-store
+        if: steps.cache.outputs.cache-hit == 'true'
+        uses: actions/cache/restore@v4.2.3
         with:
           path: /nix/store
           key: ${{ runner.os }}-png
@@ -18,20 +25,7 @@ jobs:
       - name: 'Install nix'
         uses: DeterminateSystems/nix-installer-action@v9
 
-      - name: 'Nix jank'
-        if: steps.cache.outputs.cache-hit == 'true'
-        run: sudo chown root:runner /nix/store
-
-      - name: 'Restore Firefox'
-        id: restore-firefox
-        if: steps.cache.outputs.cache-hit == 'true'
-        uses: actions/cache/restore@v4.2.3
-        with:
-          path: /nix/store
-          key: ${{ steps.cache.outputs.cache-primary-key }}
-
       - name: 'Undoing Nix jank'
-        if: steps.cache.outputs.cache-hit == 'true'
         run: sudo chown root:nixbld /nix/store
       
       - name: 'Create PNG'
@@ -45,6 +39,7 @@ jobs:
           retention-days: 5
 
       - name: 'Cache Firefox'
+        if: steps.restore-nix-store.outputs.cache-hit != 'true'
         uses: actions/cache/save@v4.2.3
         with:
           path: /nix/store
