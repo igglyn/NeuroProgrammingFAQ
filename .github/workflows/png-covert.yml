@@ -1,5 +1,9 @@
 name: create-png
 run-name: Creating PNG from SVG
+
+permissions: 
+  contents: write
+
 on:
   push:
     paths:
@@ -11,19 +15,33 @@ jobs:
     steps:
       - name: 'checkout repo'
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: 'Install nix'
         uses: DeterminateSystems/nix-installer-action@v9
+
+      - name: Switch to the other branch
+        run: |
+          git switch PNG
+        shell: pwsh
       
       - name: 'Create PNG'
         if: steps.restore-nix-store.outputs.cache-hit != 'true'
         run: |
           nix-shell -p firefox --command "firefox -screenshot file://\$(realpath FAQ.svg) --window-size 1280,720"
           mv screenshot.png FAQ.png
-          
-      - name: 'Upload PNG Artifact'
-        uses: actions/upload-artifact@v4
-        with:
-          name: FAQpng
-          path: ./FAQ.png
-          retention-days: 5
+
+      - name: 'Commit PNG to repo'
+        shell: pwsh 
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add FAQ.png
+          git diff HEAD --exit-code | Out-Null
+          if ($LASTEXITCODE -ne 0)
+          {
+              & git commit -m "Building PNG from SVG"
+              & git push origin PNG
+          }
+      
