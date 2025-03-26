@@ -11,7 +11,7 @@ jobs:
       - name: 'Nix jank'
         run: |
           sudo mkdir -p /nix/store
-          sudo chown runner:nixbld /nix/store
+          sudo chown runner:runner /nix/store
 
       - name: 'Restore nix-store'
         id: restore-nix-store
