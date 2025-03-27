@@ -94,12 +94,12 @@
           <th class="left">- Voice</th>
           <td>
             <p>Whisper for vocal transcribing other people's voices</p>
-            <p>??? for TTS, Apollo for RVC, search for RVC voices on a site like silly tavern</p>
+            <p>??? for TTS, Applio for RVC, search for RVC voices on a site like silly tavern</p>
           </td>
           <td>
             <p>For Vocal input, you can grab an LLM with audio input (source)</p>
             <p>No way that I'm aware of to train such.</p>
-            <p>For Vocal output, some LLMs do such but still need an RVC step. Apollo is what is recommended for such.</p>
+            <p>For Vocal output, some LLMs do such but still need an RVC step. Applio is what is recommended for such.</p>
           </td>
         </tr><tr>
           <th class="left">- LLM</th>
