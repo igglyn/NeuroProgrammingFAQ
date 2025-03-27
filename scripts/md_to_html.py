@@ -70,7 +70,9 @@ def reformat_table(html, special_classes:dict=None):
 
     for idx, section in np.ndenumerate(other_rows[:, 0:]):
         if section == "": continue
-        other_rows[idx] = "<p>" + section + "</p>"
+        if type(section) is list:
+            section = [str(item) for item in section]
+        other_rows[idx] = "<p>" + "".join(section) + "</p>"
 
 
 
