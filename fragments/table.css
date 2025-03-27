@@ -1,0 +1,55 @@
+.AITableObject tr {
+  color: #EEE;
+  font-family: "Fira Code";
+  padding: 5px;
+  border-right: 2px solid #EEE;
+  border-bottom: 2px dotted #EEE;
+}
+
+.AITableObject th {
+  font-size: 18px;
+  text-align: left;
+}
+
+.AITalbeObject td {
+  font-size: 10px;
+}
+
+.AITableObject p {
+  margin: 0;
+}
+
+.AITableObject thead tr:nth-child(1) {
+  width: 100px;
+}
+
+.AITableObject thead tr:nth-child(2) {
+  width: 200px;
+}
+
+.AITableObject thead tr:nth-child(3) {
+  width: 400px;
+}
+
+.AITableObject th.left {
+  border-left: 2px solid #EEE;
+}
+
+.AITableObject th.top {
+  border-bottom-style: double;
+  border-top: 2px solid #EEE;
+}
+
+.AITableObject .bottom {
+  border-bottom-style: solid;
+}
+
+.AITableObject .NOmegealul {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.AITableObject .NOmegealul img {
+  display: inline-block;
+  height: 0.8em;
+}
