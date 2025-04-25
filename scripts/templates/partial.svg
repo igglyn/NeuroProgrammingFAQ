@@ -1,0 +1,36 @@
+<?xml version="1.0" standalone="yes"?>
+<svg width="1280" height="720" xmlns="http://www.w3.org/2000/svg">
+
+  <rect width="1280" height="720" fill="#1c1d22"/>
+
+  <text y="10" fill="#EEE" font-size="20">
+    <tspan x="10" dy="1.2em">Hello and welcome to the #programing channel!!!1!</tspan>
+    <tspan x="10" dy="1.2em">bc u are asking here, here are some things to note!</tspan>
+  </text>
+
+  <text y="77" fill="#EEE" font-size="10">
+    <tspan x="190" dy="1.2em">The Programming chat, despite it's name is the general tech channel.</tspan>
+    <tspan x="190" dy="1.2em">The channel description sums it up best; But another word phrase is:</tspan>
+    <tspan x="190" dy="1.2em">If your called a nerd or need the help of nerds. You are in the correct place.</tspan>
+  </text>
+
+  <foreignObject x="10" y="78" width="170" height="70">
+    {% include 'programming.html' %}
+  </foreignObject>
+  
+  <!--
+  <text x="20" y="200" fill="#EEE" font-size="25" font-weight="bold">I want X part of Neuro/Evil:</text>
+  -->
+
+
+  <text x="20" y="200" fill="#EEE" font-size="25" font-weight="bold">Recommended Models to Build stuff:</text>
+
+  <foreignObject x="10" y="200" width="700" height="500">
+    <style>
+      {% include 'AITable.css' %}
+    </style>
+    <body class="AITableObject" xmlns="http://www.w3.org/1999/xhtml">
+      {{ AITable|safe }}
+    </body>
+  </foreignObject>
+</svg>

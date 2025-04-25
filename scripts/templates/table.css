@@ -1,0 +1,35 @@
+.{{html.name}} td,
+.{{html.name}} th {
+  color: #EEE;
+  font-family: "Fira Code";
+  padding: 5px;
+  border-right: 2px solid #EEE;
+  border-bottom: 2px dotted #EEE;
+}
+
+.{{html.name}} th {
+  font-size: 18px;
+  text-align: left;
+}
+
+.{{html.name}} td {
+  font-size: 10px;
+}
+
+.{{html.name}} p {
+  margin: 0;
+}
+
+.{{html.name}} th.left {
+  border-left: 2px solid #EEE;
+}
+
+.{{html.name}} th.top {
+  border-bottom-style: double;
+  border-top: 2px solid #EEE;
+}
+
+.{{html.name}} .bottom {
+  border-bottom-style: solid;
+}
+

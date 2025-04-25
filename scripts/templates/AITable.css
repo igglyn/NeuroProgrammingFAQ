@@ -1,0 +1,17 @@
+{% include table.css %}
+/* There is 700px width total, this forces the size */
+.{{html.name}} tr > :nth-child(1) { width: 100px; }
+.{{html.name}} tr > :nth-child(2) { width: 200px; }
+.{{html.name}} tr > :nth-child(3) { width: 400px; }
+
+
+
+.{{html.name}} .NOmegealul {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.{{html.name}} .NOmegealul img {
+  display: inline-block;
+  height: 0.8em;
+}
