@@ -45,23 +45,23 @@ programing has no editable properties from here
 
 
 !!! aitable "Recommended Models to build stuff:"
-    | Parts:      | "Just Works"                                                                   | "Custom"                                                                                                                 |
-    |-------------|--------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
-    | - Voice     | Whisper for vocal transcribing other people's voices                           | For Vocal input, you can grab an LLM with audio input (source)                                                           |
-    |             | ??? for TTS, Applio for RVC, search for RVC voices on a site like silly tavern | No way that I'm aware of to train such.                                                                                  |
-    |             |                                                                                | For Vocal output, some LLMs do such but still need an RVC step. Applio is what is recommended for such.                  |
-    | - LLM       | **TODO!** Ask around for rec based on VRAM, maybe 6GB, 12GB, 24GB              | **TODO!** Same as left, but some finetuning advice.                                                                      |
-    |             | CPU (step 1 is getting a GPU)                                                  | Unless you rent out a H100 cluster, TBs of raw data AND can outskill entire teams of AI research. Then finetune a model. |
-    | - Vision    | **TODO!** Ask on this one                                                      | **TODO!** Ask on this side as well                                                                                       |
-    |             |                                                                                | Some object detection is possible to train sepratly, Better off grabbing an existing object detection model.             |
-    |             |                                                                                | having your LLM include vision is also an option.                                                                        |
-    | - Memory    | **TODO!** Best we got is some sort of RAG.                                     | Intergrate some flavor of RAG into your LLM model. However you do so.                                                    |
-    |             | Maybe memgpt or similar, I got no idea on this one.                            | Long term, some database for memories.                                                                                   |
-    | - API       | **TODO!** You really, really think this just exists? xdx                       | Not an AI question; check if a general project exists or hit the docs                                                    |
-    | - All of it | NOmegalul (replace with image of N+neuromegealul)                              | All of the above at least, but that is just getting the persona.                                                         |
-    |             |                                                                                | No one can help you beyond here, so don't bother asking.                                                                 |
-    |             |                                                                                | Even if they could, there is no reason at all for them to help you.                                                      |
-    |             |                                                                                | Why would they help **you**?                                                                                             |
+    | Parts:      | "Just Works"                                                                           | "Custom"                                                                                                                 |
+    |-------------|----------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
+    | - Voice     | Whisper for vocal transcribing other people's voices                                   | For Vocal input, you can grab an LLM with audio input (source)                                                           |
+    |             | ??? for TTS, Applio for RVC, search for RVC voices on a site like silly tavern         | No way that I'm aware of to train such.                                                                                  |
+    |             |                                                                                        | For Vocal output, some LLMs do such but still need an RVC step. Applio is what is recommended for such.                  |
+    | - LLM       | **TODO!** Ask around for rec based on VRAM, maybe 6GB, 12GB, 24GB                      | **TODO!** Same as left, but some finetuning advice.                                                                      |
+    |             | CPU (step 1 is getting a GPU)                                                          | Unless you rent out a H100 cluster, TBs of raw data AND can outskill entire teams of AI research. Then finetune a model. |
+    | - Vision    | **TODO!** Ask on this one                                                              | **TODO!** Ask on this side as well                                                                                       |
+    |             |                                                                                        | Some object detection is possible to train sepratly, Better off grabbing an existing object detection model.             |
+    |             |                                                                                        | having your LLM include vision is also an option.                                                                        |
+    | - Memory    | **TODO!** Best we got is some sort of RAG.                                             | Intergrate some flavor of RAG into your LLM model. However you do so.                                                    |
+    |             | Maybe memgpt or similar, I got no idea on this one.                                    | Long term, some database for memories.                                                                                   |
+    | - API       | **TODO!** You really, really think this just exists? xdx                               | Not an AI question; check if a general project exists or hit the docs                                                    |
+    | - All of it | N ![NeurOmegalul](https://cdn.discordapp.com/emojis/1097297318119743638.webp?size=240) | All of the above at least, but that is just getting the persona.                                                         |
+    |             |                                                                                        | No one can help you beyond here, so don't bother asking.                                                                 |
+    |             |                                                                                        | Even if they could, there is no reason at all for them to help you.                                                      |
+    |             |                                                                                        | Why would they help **you**?                                                                                             |
 
 
 !!! neuroprojects "I want X part of Neuro/Evil:"

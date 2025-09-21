@@ -16,28 +16,28 @@ md_text = (file := open("../FAQ.md")).read()
 file.close()
 
 
-toml, md = md_text.split("\n---")
+yml, md = md_text.split("\n---")
 
 table_html = Markdown(extensions=("tables", "nl2br", "admonition")).convert(md)
 
-table_dict = yaml.load(toml, UnsafeLoader)
+table_dict = yaml.load(yml, UnsafeLoader)
 
-print(table_dict)
+#print(table_dict)
 
-# hardcoded skipping of the p tag, should be comparing for not a div instead
-content = BeautifulSoup(table_html, "html.parser").findAll('div')
+content = [*BeautifulSoup(table_html, "html.parser").find_all('div')]
 names = [item['class'][1] for item in content]
 
-print(names)
+tables = {item['class'][1]: item for item in content if not (item.find("table") is None)} 
+
+for name, html in tables.items():
+    print(name, type(html))
+    table = reformat_table(html)
 
 exit()
-
-table = reformat_table(table_html)
-
 generated_svg = env.get_template("partial.svg").render(AITable=table)
 
 file = open("generatedFAQ.svg", "w")
-file.write(generated_svg)
+file.write(table_html)
 file.close()
 
 # SVG Base

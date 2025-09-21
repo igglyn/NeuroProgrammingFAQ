@@ -1,120 +1,127 @@
-<?xml version="1.0" standalone="yes"?>
-<svg width="1280" height="720" xmlns="http://www.w3.org/2000/svg">
-
-  <rect width="1280" height="720" fill="#1c1d22"/>
-
-  <text y="10" fill="#EEE" font-size="20">
-    <tspan x="10" dy="1.2em">Hello and welcome to the #programing channel!!!1!</tspan>
-    <tspan x="10" dy="1.2em">bc u are asking here, here are some things to note!</tspan>
-  </text>
-
-  <text y="77" fill="#EEE" font-size="10">
-    <tspan x="190" dy="1.2em">The Programming chat, despite it's name is the general tech channel.</tspan>
-    <tspan x="190" dy="1.2em">The channel description sums it up best; But another word phrase is:</tspan>
-    <tspan x="190" dy="1.2em">If your called a nerd or need the help of nerds. You are in the correct place.</tspan>
-  </text>
-
-  <foreignObject x="10" y="78" width="170" height="70">
-    <style>
-  .programmingObject * {
-    color: color-mix(in oklab, hsl(213.75 calc(1*8.081%) 61.176% /1) 100%, #000 0%);
-  }
-  .programmingObject p {
-    font-size:20px;
-    font-family: "gg sans","noto sans","helvetica neue",helvetica,arial,sans-serif;
-    line-height:20px;
-    margin: -1.75rem 0 0 1.65em
-  }
-  body.programmingObject {
-    background-color: color-mix(in oklab, hsl(220 calc(1*6.522%) 18.039% /1) 100%, #000 0%)
-  }
-  body {
-    margin:auto;
-    padding:10px
-  }
-</style>
-
-<!-- yoinked from discord itself -->
-<body class="programmingObject" xmlns="http://www.w3.org/1999/xhtml">
-  <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewbox="0 0 24 24">
-      <path fill="currentcolor" fill-rule="evenodd" d="M10.99 3.16A1 1 0 1 0 9 2.84L8.15 8H4a1 1 0 0 0 0 2h3.82l-.67 4H3a1 1 0 1 0 0 2h3.82l-.8 4.84a1 1 0 0 0 1.97.32L8.85 16h4.97l-.8 4.84a1 1 0 0 0 1.97.32l.86-5.16H20a1 1 0 1 0 0-2h-3.82l.67-4H21a1 1 0 1 0 0-2h-3.82l.8-4.84a1 1 0 1 0-1.97-.32L15.15 8h-4.97l.8-4.84ZM14.15 14l.67-4H9.85l-.67 4h4.97Z" clip-rule="evenodd">
-      </path>
-  </svg>
-  <p>programming</p>
-</body>
-
-
-
-
-  </foreignObject>
-  
-  <!--
-  <text x="20" y="200" fill="#EEE" font-size="25" font-weight="bold">I want X part of Neuro/Evil:</text>
-  -->
-
-
-  <text x="20" y="200" fill="#EEE" font-size="25" font-weight="bold">Recommended Models to Build stuff:</text>
-
-  <foreignObject x="10" y="200" width="700" height="500">
-    <style>
-      .AITableObject td,
-.AITableObject th {
-  color: #EEE;
-  font-family: "Fira Code";
-  padding: 5px;
-  border-right: 2px solid #EEE;
-  border-bottom: 2px dotted #EEE;
-}
-
-.AITableObject th {
-  font-size: 18px;
-  text-align: left;
-}
-
-.AITableObject td {
-  font-size: 10px;
-}
-
-.AITableObject p {
-  margin: 0;
-}
-
-
-
-/* There is 700px width total, this forces the size */
-.AITableObject tr > :nth-child(1) { width: 100px; }
-.AITableObject tr > :nth-child(2) { width: 200px; }
-.AITableObject tr > :nth-child(3) { width: 400px; }
-
-
-
-.AITableObject th.left {
-  border-left: 2px solid #EEE;
-}
-
-.AITableObject th.top {
-  border-bottom-style: double;
-  border-top: 2px solid #EEE;
-}
-
-.AITableObject .bottom {
-  border-bottom-style: solid;
-}
-
-
-
-.AITableObject .NOmegealul {
-  font-size: 40px;
-  font-weight: bold;
-}
-
-.AITableObject .NOmegealul img {
-  display: inline-block;
-  height: 0.8em;
-}
-    </style>
-    <body class="AITableObject" xmlns="http://www.w3.org/1999/xhtml">
-      <table><thead><tr><th class='top left'><p>Parts:</p></th><th class='top'><p>"Just Works"</p></th><th class='top'><p>"Custom"</p></th></tr></thead><tbody><tr><th class='left'><p>- Voice</p></th><td><p>Whisper for vocal transcribing other people's voices</p><p>??? for TTS, Applio for RVC, search for RVC voices on a site like silly tavern</p></td><td><p>For Vocal input, you can grab an LLM with audio input (source)</p><p>No way that I'm aware of to train such.</p><p>For Vocal output, some LLMs do such but still need an RVC step. Applio is what is recommended for such.</p></td></tr><tr><th class='left'><p>- LLM</p></th><td><p><strong>TODO!</strong> Ask around for rec based on VRAM, maybe 6GB, 12GB, 24GB</p><p>CPU (step 1 is getting a GPU)</p></td><td><p><strong>TODO!</strong> Same as left, but some finetuning advice.</p><p>Unless you rent out a H100 cluster, TBs of raw data AND can outskill entire teams of AI research. Then finetune a model.</p></td></tr><tr><th class='left'><p>- Vision</p></th><td><p><strong>TODO!</strong> Ask on this one</p></td><td><p><strong>TODO!</strong> Ask on this side as well</p><p>Some object detection is possible to train sepratly, Better off grabbing an existing object detection model.</p><p>having your LLM include vision is also an option.</p></td></tr><tr><th class='left'><p>- Memory</p></th><td><p><strong>TODO!</strong> Best we got is some sort of RAG.</p><p>Maybe memgpt or similar, I got no idea on this one.</p></td><td><p>Intergrate some flavor of RAG into your LLM model. However you do so.</p><p>Long term, some database for memories.</p></td></tr><tr><th class='left'><p>- API</p></th><td><p><strong>TODO!</strong> You really, really think this just exists? xdx</p></td><td><p>Not an AI question; check if a general project exists or hit the docs</p></td></tr><tr><th class='bottom left'><p>- All of it</p></th><td class='bottom'><p>NOmegalul (replace with image of N+neuromegealul)</p></td><td class='bottom'><p>All of the above at least, but that is just getting the persona.</p><p>No one can help you beyond here, so don't bother asking.</p><p>Even if they could, there is no reason at all for them to help you.</p><p>Why would they help <strong>you</strong>?</p></td></tr></tbody></table>
-    </body>
-  </foreignObject>
-</svg>
+<p>Metadata type is either:<br />
+-   svg: W, H, color<br />
+-   text: X, Y, color, font-size (optional: font-weight)<br />
+-   html: X, Y, W, H<br />
+-   source: file-source (should be impled as override)<br />
+-   style: file-source</p>
+<p>section names will be converted to lowercase</p>
+<p>programing has no editable properties from here</p>
+<div class="admonition title">
+<p>Hello and welcome to the #programing channel!!!1!<br />
+bc u are asking here, here are some things to note!</p>
+</div>
+<div class="admonition description">
+<p>The Programming chat, despite it's name is the general tech channel.<br />
+The channel description sums it up best; But another word phrase is:<br />
+If your called a nerd or need the help of nerds. You are in the correct place.</p>
+</div>
+<div class="admonition aitable">
+<p class="admonition-title">Recommended Models to build stuff:</p>
+<table>
+<thead>
+<tr>
+<th>Parts:</th>
+<th>"Just Works"</th>
+<th>"Custom"</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>- Voice</td>
+<td>Whisper for vocal transcribing other people's voices</td>
+<td>For Vocal input, you can grab an LLM with audio input (source)</td>
+</tr>
+<tr>
+<td></td>
+<td>??? for TTS, Applio for RVC, search for RVC voices on a site like silly tavern</td>
+<td>No way that I'm aware of to train such.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>For Vocal output, some LLMs do such but still need an RVC step. Applio is what is recommended for such.</td>
+</tr>
+<tr>
+<td>- LLM</td>
+<td><strong>TODO!</strong> Ask around for rec based on VRAM, maybe 6GB, 12GB, 24GB</td>
+<td><strong>TODO!</strong> Same as left, but some finetuning advice.</td>
+</tr>
+<tr>
+<td></td>
+<td>CPU (step 1 is getting a GPU)</td>
+<td>Unless you rent out a H100 cluster, TBs of raw data AND can outskill entire teams of AI research. Then finetune a model.</td>
+</tr>
+<tr>
+<td>- Vision</td>
+<td><strong>TODO!</strong> Ask on this one</td>
+<td><strong>TODO!</strong> Ask on this side as well</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Some object detection is possible to train sepratly, Better off grabbing an existing object detection model.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>having your LLM include vision is also an option.</td>
+</tr>
+<tr>
+<td>- Memory</td>
+<td><strong>TODO!</strong> Best we got is some sort of RAG.</td>
+<td>Intergrate some flavor of RAG into your LLM model. However you do so.</td>
+</tr>
+<tr>
+<td></td>
+<td>Maybe memgpt or similar, I got no idea on this one.</td>
+<td>Long term, some database for memories.</td>
+</tr>
+<tr>
+<td>- API</td>
+<td><strong>TODO!</strong> You really, really think this just exists? xdx</td>
+<td>Not an AI question; check if a general project exists or hit the docs</td>
+</tr>
+<tr>
+<td>- All of it</td>
+<td>N <img alt="NeurOmegalul" src="https://cdn.discordapp.com/emojis/1097297318119743638.webp?size=240" /></td>
+<td>All of the above at least, but that is just getting the persona.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>No one can help you beyond here, so don't bother asking.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Even if they could, there is no reason at all for them to help you.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Why would they help <strong>you</strong>?</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition neuroprojects">
+<p class="admonition-title">I want X part of Neuro/Evil:</p>
+<table>
+<thead>
+<tr>
+<th>Parts:</th>
+<th>Recreation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>= Voice</td>
+<td>Hello SuperBox :neurowave:</td>
+</tr>
+<tr>
+<td>- API</td>
+<td><a href="https://github.com/VedalAI/neuro-game-sdk">Neuro SDK</a> is a offical project to allow for modding games for Neuro/Evil to play.</td>
+</tr>
+</tbody>
+</table>
+</div>

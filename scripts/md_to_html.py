@@ -2,40 +2,18 @@ from bs4 import BeautifulSoup
 from markdown import markdown
 import numpy as np
 
-class TableArray:
-    # TODO descriptions for each of these
+class TableArray2:
+    def convert_table_headers(html:str):
+        scope = html.find("table").find("thead").find("tr")
+        return np.array(scope, dtype=object)
+    def convert_table_body(html:str):
+        scope = html.find("table").find("tbody")
+        grid = [[i for i in row.find_all("td")] for row in scope.find_all("tr")]
+        array = np.array(grid, dtype=object)
+        return array
 
-    @staticmethod
-    def __shorthand(html:str, search_type:str) -> list:
-        return list(getattr(BeautifulSoup(str(html), "html.parser"), search_type).children)
 
-    @staticmethod
-    def __process(html:str, *levels:tuple[str]) -> list:
-        # "python match cases are not meant for this"
-        if len(levels) == 1:
-            output = []
-            for item in filter(lambda x: x != '\n', html):
-                i = TableArray.__shorthand(item, levels[0])
-                if len(i) > 1: output.append(i)
-                elif len(i) == 1: output.append(str(i[0]))
-                else: output.append("")
-            return output
-        elif len(levels) == 2:
-            search = TableArray.__shorthand(html, levels[0])
-            return TableArray.__process(search, levels[1])
-        elif len(levels) == 3:
-            output = []
-            search = TableArray.__process(html, *levels[0:2])
-            for item in search:
-                output.append(TableArray.__process(item, levels[2]))
-            return output
 
-    @staticmethod
-    def convert(html:str, *args:tuple[str], **kwargs) -> np.ndarray:
-        if len(args) < 2+1 or len(args) > 3+1:
-            raise ValueError(f"{len(args)-1} levels of nesting defined, the function only supports 2-3 levels of nesting")
-        # object is required, it'll clip when editing later on
-        return np.array(TableArray.__process(html, *args, **kwargs), dtype=object)
 
 # I could not think of a better method
 class HTMLObject:
@@ -58,25 +36,32 @@ class HTMLObject:
 
 
 
-def reformat_table(html, special_classes:dict=None):
+def reformat_table(html:str, special_classes:dict=None):
 
     # convert html to arrays
-    headers = TableArray.convert(html, "tr", "th")
-    other_rows = TableArray.convert(html, "tbody", "tr", "td")
+    # we are assuming that there is one table in here
+    headers = TableArray2.convert_table_headers(html)
+    other_rows = TableArray2.convert_table_body(html)
+
+
+    #print(other_rows)
+
 
     subject_offsets = []
     for idx, subject in np.ndenumerate(other_rows[:, 0]):
-        if not subject == "":
+        if not len(tuple(subject.children)):
             subject_offsets.append(idx[0])
     else:
         subject_offsets.append(idx[0] + 1)
 
+
     for idx, section in np.ndenumerate(other_rows[:, 0:]):
-        if section == "": continue
-        if type(section) is list: section = [str(item) for item in section]
-        other_rows[idx] = "<p>" + "".join(section) + "</p>"
+        # Converting from <td></td> to <p></p>
+        # lack of hidden internals moment
+        section.name = "p"
 
 
+    exit()
 
 
     # Pack into Array
@@ -89,7 +74,6 @@ def reformat_table(html, special_classes:dict=None):
 
         for col in range(1,len(headers)):
             table_array[idx+1, col] = HTMLObject("td", "".join(other_rows[offset:subject_offsets[idx+1], col]))
-
 
     for idx, header in enumerate(headers):
         table_array[0, idx] = HTMLObject("th", "<p>" + header + "</p>")
