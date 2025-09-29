@@ -22,8 +22,9 @@ jobs:
         uses: DeterminateSystems/nix-installer-action@v9
       
       - name: 'Create PNG'
+        if: steps.restore-nix-store.outputs.cache-hit != 'true'
         run: |
-          nix-shell -p wkhtmltopdf --command "wkhtmltoimage FAQ.svg"
+          nix-shell -p firefox --command "firefox -screenshot file://\$(realpath FAQ.svg) --window-size 1280,720"
           mv screenshot.png FAQ.png
 
       - name: 'Commit PNG to repo'
