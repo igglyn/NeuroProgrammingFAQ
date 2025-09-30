@@ -1,67 +1,95 @@
 <?xml version="1.0" standalone="yes"?>
 <svg width="1280" height="720" xmlns="http://www.w3.org/2000/svg">
-
 <rect width="1280" height="720" fill="#1c1d22"/>
 
-<text y="10" fill="#EEE" font-size="20">
-  <tspan x="10" dy="1.2em">Hello and welcome to the #programing channel!!!1!</tspan>
-  <tspan x="10" dy="1.2em">bc u are asking here, here are some things to note!</tspan>
-</text>
+<foreignObject x="0" y="0" width="1280px" height="720px">
+<body xmlns="http://www.w3.org/1999/xhtml">
+  <div class="obj3" style="position: absolute; top: 10px left: 10px">
+    <style>
+      div.obj3 p {
+        color: #EEE;
+        margin: 0;
+        font-size: 25px;
+    </style>
+    <p>Hello and welcome to the #programing channel!!!1!</p>
+    <p>bc u are asking here, here are some things to note!</p>
+  </div>
 
-<text y="77" fill="#EEE" font-size="10">
-  <tspan x="190" dy="1.2em">The Programming chat, despite it's name is the general tech channel.</tspan>
-  <tspan x="190" dy="1.2em">The channel description sums it up best; But another word phrase is:</tspan>
-  <tspan x="190" dy="1.2em">If your called a nerd or need the help of nerds. You are in the correct place.</tspan>
-</text>
+  <div class="obj4" style="position: absolute; top:77px; left:190px">
+    <style>
+      div.obj4 p {
+        color: #EEE;
+        margin: 0;
+        font-size: 10px;
+      }
 
-<foreignObject x="10" y="78" width="170" height="70">
-  <!-- WHY ARE YOU PLACED GLOBALLY!!!!!!!!!!!!!! -->
-  <style>
-  .obj2 * {
-    color: color-mix(in oklab, hsl(213.75 calc(1*8.081%) 61.176% /1) 100%, #000 0%);
-  }
-  .obj2 p {
-    font-size:20px;
-    font-family: "gg sans","Noto Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-    line-height:20px;
-    margin: -1.75rem 0 0 1.65em
-  }
-  body.obj2 {
-    background-color: color-mix(in oklab, hsl(220 calc(1*6.522%) 18.039% /1) 100%, #000 0%)
-  }
-  body {
-    margin:auto;
-    padding:10px
-  }
-  </style>
-
-
+      .obj4 {
+        padding: 4px;
+        border-top: 2px solid #AACC;
+        border-right: 2px double #AAC6;
+        border-left: 2px solid #AAC9;
+        border-bottom: 2px double #AAC5;
+        background-image: linear-gradient(155deg, #AACB, #AAC0 5%, #0000);
+        background-color: #202;
+      }
+    </style>
+    <p>The Programming chat, despite it's name is the general tech channel.</p>
+    <p>The channel description sums it up best; But another word phrase is:</p>
+    <p>If your called a nerd or need the help of nerds. You are in the correct place.</p>
+  </div>
 
   <!-- Yoinked from discord itself -->
-  <body class="obj2" xmlns="http://www.w3.org/1999/xhtml">
+  <div class="obj2" style="position: fixed; top:80px; left:10px;">
+    <style>
+
+
+      div.obj2 * {
+        color: color-mix(in oklab, hsl(213.75 calc(1*8.081%) 61.176% /1) 100%, #000 0%);
+      }
+      div.obj2 p {
+        font-size:20px;
+        font-family: "gg sans","Noto Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+        line-height:20px;
+        margin: -1.75rem 0 0 1.65em
+      }
+      div.obj2 {
+        background-color: color-mix(in oklab, hsl(220 calc(1*6.522%) 18.039% /1) 100%, #000 0%)
+      }
+      div.obj2 {
+        margin:auto;
+        padding:10px;
+        border-top: 2px solid #AACC;
+        border-right: 2px double #AAC6;
+        border-left: 2px solid #AAC9;
+        border-bottom: 2px double #AAC5;
+        background-image: linear-gradient(155deg, #AACB, #AAC0 5%, #0000);
+      }
+
+    </style>
     <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-        <path fill="currentColor" fill-rule="evenodd" d="M10.99 3.16A1 1 0 1 0 9 2.84L8.15 8H4a1 1 0 0 0 0 2h3.82l-.67 4H3a1 1 0 1 0 0 2h3.82l-.8 4.84a1 1 0 0 0 1.97.32L8.85 16h4.97l-.8 4.84a1 1 0 0 0 1.97.32l.86-5.16H20a1 1 0 1 0 0-2h-3.82l.67-4H21a1 1 0 1 0 0-2h-3.82l.8-4.84a1 1 0 1 0-1.97-.32L15.15 8h-4.97l.8-4.84ZM14.15 14l.67-4H9.85l-.67 4h4.97Z" clip-rule="evenodd">
-        </path>
+      <path fill="currentColor" fill-rule="evenodd" d="M10.99 3.16A1 1 0 1 0 9 2.84L8.15 8H4a1 1 0 0 0 0 2h3.82l-.67 4H3a1 1 0 1 0 0 2h3.82l-.8 4.84a1 1 0 0 0 1.97.32L8.85 16h4.97l-.8 4.84a1 1 0 0 0 1.97.32l.86-5.16H20a1 1 0 1 0 0-2h-3.82l.67-4H21a1 1 0 1 0 0-2h-3.82l.8-4.84a1 1 0 1 0-1.97-.32L15.15 8h-4.97l.8-4.84ZM14.15 14l.67-4H9.85l-.67 4h4.97Z" clip-rule="evenodd">
+      </path>
     </svg>
     <p>programming</p>
-  </body>
-</foreignObject>
+  </div>
 
 
-
-
-<text x="20" y="200" fill="#EEE" font-size="25" font-weight="bold">I want X part of Neuro/Evil:</text>
-
-<foreignObject x="10" y="200" width="700" height="500">
+<div class="obj1" style="position: fixed; top:200px; left:10px; width:700px; height:500px;">
   <style>
-      body.obj1 th,
-      body.obj1 td {
+      div.obj1 th,
+      div.obj1 td {
         color: #EEE;
         font-family: "Fira Code";
         padding: 5px;
-        border-right: 2px solid #EEE;
-        border-bottom: 2px dotted #EEE;
+        margin: 0;
+        border-top: 2px solid #AACC;
+        border-right: 2px double #AAC6;
+        border-left: 2px solid #AAC9;
+        border-bottom: 2px double #AAC5;
+        text-shadow: 0 0 20px #FFFA;
+        background-image: linear-gradient(155deg, #AACB, #AAC0 5%, #0000);
       }
+      
       .obj1 th {
         font-size: 18px;
         text-align: left;
@@ -69,27 +97,70 @@
       .obj1 td {
         font-size: 10px;
       }
-      .obj1 p {
+      .obj1 table p {
+        color: #EEE;
         margin: 0;
+        font-weight: normal;
+        font-size: 10px;
+        text-shadow: 0 0 20px #FFFA;
       }
-      .obj1 th.left {
-        border-left: 2px solid #EEE;
+      .obj1 p { 
+        margin: 0 0 0 4px;
+        font-size: 25px;
+        font-weight: bold;
+        color: #EEE;
       }
-      .obj1 th.top {
-        border-bottom-style: double;
-        border-top: 2px solid #EEE;
+
+      .obj1 img {
+        filter: drop-shadow(0 0 20px #FFFA);
       }
-      .obj1 .bottom {
-        border-bottom-style: solid;
+    
+      /* left to right */ 
+      .obj1 tr th {
+        background-color: #136A;
       }
+      .obj1 tr td:nth-child(2) {
+        background-color: #024A;
+      }
+      .obj1 tr td:nth-child(3) {
+        background-color: #202A;
+      }
+
+      /* top to bottom */
+      .obj1 tr:nth-child(1) {
+        background-color: #0008;
+      }
+      .obj1 tr:nth-child(2) {
+        background-color: #0238;
+      }
+      .obj1 tr:nth-child(3) {
+        background-color: #0058;
+      }
+      .obj1 tr:nth-child(4) {
+        background-color: #3028;
+      }
+      .obj1 tr:nth-child(5) {
+        background-color: #5008;
+      }
+      .obj1 tr:nth-child(6) {
+        background-color: #2308;
+      }
+      .obj1 tr:nth-child(7) {
+        background-color: #0508;
+      }
+
+
+      
+      
+    
     </style>
-    <body class="obj1" xmlns="http://www.w3.org/1999/xhtml">
+      <p>I want X part of Neuro/Evil:</p>
       <table>
         <tr>
           <!-- Jank method to force sizing (add up to total width)-->
           <th class="top left"  style="width:100px;">Parts:</th>
           <th class="top"       style="width:200px;">"Just Works"</th>
-          <th class="top" style="width:400px;">"Custom"</th>
+          <th class="top"       style="width:400px;">"Custom"</th>
         </tr><tr>
           <th class="left">- Voice</th>
           <td>
@@ -158,11 +229,12 @@
           </td>
         </tr>
       </table>
-    </body>
-  </foreignObject>
-
+    </div>
+</body>
+</foreignObject>
 </svg>
 <!--
 Credits:
 - Igglyn, everything so far
+- KTrain, Edits to `All of it - Custom`
 -->
