@@ -6,12 +6,12 @@ permissions:
 
 on:
   workflow_dispatch:
-  pull_request:
-    types:
-      - closed
-    paths:
-      - FAQ.html
-      - assets/**
+  # pull_request:
+  #   types:
+  #     - closed
+  #   paths:
+  #     - FAQ.html
+  #     - assets/**
   push:
     paths:
       - FAQ.html
