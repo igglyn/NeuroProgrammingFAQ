@@ -12,6 +12,10 @@ on:
     paths:
       - FAQ.html
       - assets/**
+  push:
+    paths:
+      - FAQ.html
+      - assets/**
  
 jobs:
   create-png:
