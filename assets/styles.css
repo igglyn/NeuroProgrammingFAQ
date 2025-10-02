@@ -1,0 +1,198 @@
+/* the font */
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
+* {
+  box-sizing: border-box;
+}
+:root {
+  --color-bg: #0b0c11;
+  --color-text-1: #d5dae2;
+  --color-text-2: #8e98a4;
+  --color-text-3: #666e97;
+  --color-text-4: #4f5575;
+  --color-marker-stroke: #e54c4c;
+  --color-table-borders: var(--color-text-3);
+}
+body {
+  margin: 0;
+
+  /* font setup */
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  color: var(--color-text-1);
+}
+#content {
+  background-color: var(--color-bg);
+  border: 5px solid red;
+  border-top: none;
+  border-left: none;
+  box-sizing: content-box;
+  width: 1280px;
+  height: 1280px;
+}
+.pad {
+  padding: 48px;
+  width: 100%;
+  height: 100%;
+}
+
+/* content */
+.emote {
+  height: 0.85em;
+}
+.title {
+  color: var(--color-text-1);
+  font-size: 64px;
+  line-height: 64px;
+}
+.subtitle {
+  color: var(--color-text-2);
+  padding: 16px 0;
+  font-size: 40px;
+  line-height: 51px;
+}
+.heading {
+  color: var(--color-text-1);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 46px;
+  margin: 16px 0;
+}
+
+/* about channel corner */
+.about-channel {
+  position: relative;
+  float: right;
+  padding-left: 88px;
+}
+.about-channel .you-are-here {
+  display: block;
+  position: absolute;
+  left: 12px;
+  top: 14px;
+  stroke: var(--color-marker-stroke);
+}
+.about-channel .discord {
+  display: block;
+  margin-left: 1px;
+}
+.about-channel .bubble {
+  display: block;
+  margin-right: 2px;
+  margin-top: 10px;
+  fill: var(--color-text-4);
+}
+.about-channel .bubble-content {
+  position: absolute;
+  color: var(--color-text-1);
+  font-size: 14px;
+  line-height: 20px;
+  text-align: justify;
+
+  width: 260px;
+  height: 168px;
+  right: 22px;
+  bottom: 17px;
+}
+.about-channel .bubble-content .quote-title {
+  margin-top: 11px;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 19px;
+}
+.about-channel .bubble-content .quote {
+  margin-top: 8px;
+  display: flex;
+  color: var(--color-text-4);
+  gap: 14px;
+  align-items: stretch;
+}
+.about-channel .bubble-content .quote .bar {
+  background-color: currentColor;
+  width: 2px;
+  border-radius: 1px;
+  flex-shrink: 0;
+}
+.about-channel .bubble-content .quote .body {
+  font-style: italic;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 16px;
+}
+
+/* table common */
+table {
+  border-spacing: 0;
+  border: 1px solid var(--color-table-borders);
+  border-radius: 10px;
+  overflow: hidden;
+}
+table p {
+  margin: 6px 0;
+  line-height: 132%;
+}
+th,
+td {
+  border: 1px solid var(--color-table-borders);
+  border-top: none;
+  border-left: none;
+  margin: 0;
+  padding: 2px 8px;
+  background-image: url(./scribble-fill.svg);
+}
+th {
+  font-size: 24px;
+  padding: 16px 8px;
+}
+/* leftmost column */
+th:first-child {
+  text-align: start;
+}
+
+/* get rid of double borders */
+/* last column */
+th:last-child,
+td:last-child {
+  border-right: none;
+}
+/* bottom row */
+tr:last-child th,
+tr:last-child td {
+  border-bottom: none;
+}
+
+/* specific tables */
+/* neuro parts table */
+.neuro-parts tr th {
+  background-color: #136a;
+}
+.neuro-parts tr td:nth-child(2) {
+  background-color: #024a;
+}
+.neuro-parts tr td:nth-child(3) {
+  background-color: #202a;
+}
+
+/* top to bottom */
+.neuro-parts tr:nth-child(1) {
+  background-color: #0008;
+}
+.neuro-parts tr:nth-child(2) {
+  background-color: #0238;
+}
+.neuro-parts tr:nth-child(3) {
+  background-color: #0058;
+}
+.neuro-parts tr:nth-child(4) {
+  background-color: #3028;
+}
+.neuro-parts tr:nth-child(5) {
+  background-color: #5008;
+}
+.neuro-parts tr:nth-child(6) {
+  background-color: #2308;
+}
+.neuro-parts tr:nth-child(7) {
+  background-color: #0508;
+}
