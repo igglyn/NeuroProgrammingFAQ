@@ -1,0 +1,41 @@
+name: create-png
+run-name: Creating PNG from SVG
+
+permissions: 
+  contents: write
+
+on:
+  pull_request:
+    types:
+      [opened, reopened, synchronize]
+    paths: 
+      - "FAQ.svg"
+      
+jobs:
+  send-preview:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - name: 'checkout repo'
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup firefox
+        id: setup-firefox
+        uses: browser-actions/setup-firefox@v1
+        with:
+          firefox-version: "latest"
+
+      - name: 'Create PNG'
+        run: |
+          ${{ steps.setup-firefox.outputs.firefox-path }} -screenshot file://$(realpath FAQ.svg) --window-size 1280,720
+
+      - name: 'Send Preview'
+        run: |
+          gh pr comment $PRNUM --body "This is supposed to be a preview, but isn't at the given time"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          PRNUM: ${{ github.event.pull_request.number }}

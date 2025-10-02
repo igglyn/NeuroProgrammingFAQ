@@ -5,12 +5,15 @@ permissions:
   contents: write
 
 on:
-  push:
+  pull_request:
+    types:
+      - closed
     paths:
-      FAQ.svg
-      
+      - FAQ.svg
+ 
 jobs:
   create-png:
+    if: github.event.pull_request.merged
     runs-on: ubuntu-latest
     steps:
       - name: 'checkout repo'
