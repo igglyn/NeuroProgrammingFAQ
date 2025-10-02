@@ -26,7 +26,9 @@ jobs:
       - name: 'Create PNG'
         if: steps.restore-nix-store.outputs.cache-hit != 'true'
         run: |
-          nix-shell -p firefox --command "firefox -screenshot file://\$(realpath FAQ.html) --window-size 1280,1280"
+          IMG_SIZE=$(python scripts/get_size_from_html.py)
+          echo "Generating image with dimensions: $IMG_SIZE"
+          nix-shell -p firefox --command "firefox -screenshot file://\$(realpath FAQ.html) --window-size $IMG_SIZE"
           mv screenshot.png FAQ.png
 
       - name: 'Commit PNG to repo'
