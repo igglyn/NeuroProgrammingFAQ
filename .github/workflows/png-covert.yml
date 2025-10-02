@@ -37,6 +37,6 @@ jobs:
           if ($LASTEXITCODE -ne 0)
           {
               & git commit -m "Building PNG from HTML"
-              & git push origin main
+              & git push origin ${{ github.ref_name }}
           }
       
