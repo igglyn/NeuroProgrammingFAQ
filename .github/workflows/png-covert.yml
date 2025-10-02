@@ -8,8 +8,8 @@ on:
   workflow_dispatch:
   push:
     paths:
-      FAQ.html
-      assets/**
+      - FAQ.html
+      - assets/**
       
 jobs:
   create-png:
