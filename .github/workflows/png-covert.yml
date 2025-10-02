@@ -7,7 +7,7 @@ permissions:
 on:
   push:
     paths:
-      FAQ.svg
+      FAQ.html
       
 jobs:
   create-png:
@@ -24,7 +24,7 @@ jobs:
       - name: 'Create PNG'
         if: steps.restore-nix-store.outputs.cache-hit != 'true'
         run: |
-          nix-shell -p firefox --command "firefox -screenshot file://\$(realpath FAQ.svg) --window-size 1280,720"
+          nix-shell -p firefox --command "firefox -screenshot file://\$(realpath FAQ.html) --window-size 1280,1280"
           mv screenshot.png FAQ.png
 
       - name: 'Commit PNG to repo'
@@ -36,7 +36,7 @@ jobs:
           git diff HEAD --exit-code | Out-Null
           if ($LASTEXITCODE -ne 0)
           {
-              & git commit -m "Building PNG from SVG"
+              & git commit -m "Building PNG from HTML"
               & git push origin main
           }
       
