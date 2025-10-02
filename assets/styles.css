@@ -63,6 +63,7 @@ body {
   position: relative;
   float: right;
   padding-left: 88px;
+  top: 4px;
 }
 .about-channel .you-are-here {
   display: block;
