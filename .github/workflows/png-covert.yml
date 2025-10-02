@@ -36,7 +36,7 @@ jobs:
         run: |
           IMG_SIZE=$(python scripts/get_size_from_html.py)
           echo "Generating image with dimensions: $IMG_SIZE"
-          ${{ steps.setup-firefox.outputs.firefox-path }} -screenshot file://$(realpath FAQ.svg) --window-size $IMG_SIZE
+          ${{ steps.setup-firefox.outputs.firefox-path }} -screenshot file://$(realpath FAQ.html) --window-size $IMG_SIZE
           
       - name: 'Commit PNG to repo'
         shell: pwsh 
