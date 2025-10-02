@@ -17,21 +17,22 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
-      - name: 'Install nix'
-        uses: DeterminateSystems/nix-installer-action@v9
       
-      - name: 'Create PNG'
-        if: steps.restore-nix-store.outputs.cache-hit != 'true'
-        run: |
-          nix-shell -p firefox --command "firefox -screenshot file://\$(realpath FAQ.svg) --window-size 1280,720"
-          mv screenshot.png FAQ.png
+      - name: 'Setup firefox'
+        uses: browser-actions/setup-firefox@v1
+        with:
+          firefox-version: "latest"
 
+      - name: 'Create PNG'
+        run: |
+          ${{ steps.setup-firefox.outputs.firefox-path }} -screenshot file://$(realpath FAQ.svg) --window-size 1280,720
+      
       - name: 'Commit PNG to repo'
         shell: pwsh 
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
+          mv screenshot.png FAQ.png
           git add FAQ.png
           git diff HEAD --exit-code | Out-Null
           if ($LASTEXITCODE -ne 0)
