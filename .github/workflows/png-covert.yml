@@ -1,37 +1,40 @@
 name: create-png
 run-name: Creating PNG from SVG
 
-permissions: 
+permissions:
   contents: write
 
 on:
-  pull_request:
-    types:
-      - closed
+  workflow_dispatch:
+  push:
     paths:
-      - FAQ.svg
- 
+      - FAQ.html
+      - assets/**
+      - .github/workflows/png-covert.yml # makes sense to regenerate image if workflow changed
+
 jobs:
   create-png:
-    if: github.event.pull_request.merged
     runs-on: ubuntu-latest
     steps:
-      - name: 'checkout repo'
+      - name: "checkout repo"
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      
-      - name: 'Setup firefox'
+
+      - name: "Setup firefox"
+        id: setup-firefox
         uses: browser-actions/setup-firefox@v1
         with:
           firefox-version: "latest"
 
-      - name: 'Create PNG'
+      - name: "Create PNG"
         run: |
-          ${{ steps.setup-firefox.outputs.firefox-path }} -screenshot file://$(realpath FAQ.svg) --window-size 1280,720
-      
-      - name: 'Commit PNG to repo'
-        shell: pwsh 
+          IMG_SIZE=$(python scripts/get_size_from_html.py)
+          echo "Generating image with dimensions: $IMG_SIZE"
+          ${{ steps.setup-firefox.outputs.firefox-path }} -screenshot file://$(realpath FAQ.html) --window-size $IMG_SIZE
+
+      - name: "Commit PNG to repo"
+        shell: pwsh
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
@@ -40,7 +43,6 @@ jobs:
           git diff HEAD --exit-code | Out-Null
           if ($LASTEXITCODE -ne 0)
           {
-              & git commit -m "Building PNG from SVG"
-              & git push origin main
+              & git commit -m "Building PNG from HTML"
+              & git push origin ${{ github.ref_name }}
           }
-      
