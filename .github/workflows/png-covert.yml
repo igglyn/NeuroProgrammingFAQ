@@ -10,6 +10,7 @@ on:
     paths:
       - FAQ.html
       - assets/**
+      - .github/workflows/png-covert.yml # makes sense to regenerate image if workflow changed
 
 jobs:
   create-png:
