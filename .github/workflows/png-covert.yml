@@ -1,46 +1,39 @@
 name: create-png
 run-name: Creating PNG from SVG
 
-permissions: 
+permissions:
   contents: write
 
 on:
   workflow_dispatch:
-  # pull_request:
-  #   types:
-  #     - closed
-  #   paths:
-  #     - FAQ.html
-  #     - assets/**
   push:
     paths:
       - FAQ.html
       - assets/**
- 
+
 jobs:
   create-png:
-    # if: github.event.pull_request.merged
     runs-on: ubuntu-latest
     steps:
-      - name: 'checkout repo'
+      - name: "checkout repo"
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      
-      - name: 'Setup firefox'
+
+      - name: "Setup firefox"
         id: setup-firefox
         uses: browser-actions/setup-firefox@v1
         with:
           firefox-version: "latest"
 
-      - name: 'Create PNG'
+      - name: "Create PNG"
         run: |
           IMG_SIZE=$(python scripts/get_size_from_html.py)
           echo "Generating image with dimensions: $IMG_SIZE"
           ${{ steps.setup-firefox.outputs.firefox-path }} -screenshot file://$(realpath FAQ.html) --window-size $IMG_SIZE
-          
-      - name: 'Commit PNG to repo'
-        shell: pwsh 
+
+      - name: "Commit PNG to repo"
+        shell: pwsh
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
@@ -52,4 +45,3 @@ jobs:
               & git commit -m "Building PNG from HTML"
               & git push origin ${{ github.ref_name }}
           }
-      
