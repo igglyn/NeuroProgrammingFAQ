@@ -196,3 +196,6 @@ tr:last-child td {
 .neuro-parts tr:nth-child(7) {
   background-color: #0508;
 }
+.neuro-parts tr:nth-child(8) {
+  background-color: #0238;
+}
