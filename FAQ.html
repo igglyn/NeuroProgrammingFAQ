@@ -134,41 +134,33 @@
 
         <div class="heading" style="margin-top: 94px">
           <img class="emote" src="./assets/emotes/reach.webp" />
-          I want X part of Neuro/Evil:
+          I want to build X part of Neuro/Evil:
         </div>
         <table class="neuro-parts">
           <tr>
-            <th>Part</th>
-            <th>I have money and no skill</th>
-            <th>"Just Works"</th>
-            <th>"Custom"</th>
+            <th><p>Part</p></th>
+            <th><p>API only</p></th>
+            <th><p>"Just Works"</p></th>
+            <th><p>"Custom"</p></th>
           </tr>
           <tr>
             <th>Voice</th>
             <td>
-            
+              <p>Eleven Labs is your option</p> 
             </td>
             <td>
-              <p>Whisper for vocal transcribing other people's voices</p>
-              <p>
-                ??? for TTS, Applio for RVC, search for RVC voices on a site
-                like silly tavern
-              </p>
+              <p>Unless you want to have a worse experince with more models adding latency, just have it be included in your choice of model in the first place</p>
             </td>
             <td>
-              <p>
-                For Vocal input, you can grab an LLM with audio input (source)
-              </p>
-              <p>No way that I'm aware of to train such.</p>
-              <p>
-                For Vocal output, some LLMs do such but still need an RVC step.
-                Applio is what is recommended for such.
-              </p>
+              <p>Nvidia's parakeet models, whisper if that fails</p>
+              <p>Start with a model that can emit speech in the first place</p>
+              <p><b>TODO!</b> how does one alter the voice on these models</p>
             </td>
           </tr>
           <tr>
             <th>LLM</th>
             <td>
+              <p>Pick your flavor of censorship</p>
             </td>
             <td>
               <p>
@@ -188,20 +180,22 @@
           <tr>
             <th>Vision</th>
             <td>
+              <p>Send images over API likke your already doing with text</p>
             </td>
             <td>
-              <p><b>TODO!</b> Ask on this one</p>
+              <p>Grab a VLM model, those have vision input</p>
+              <p>If you want image output, no</p>
             </td>
             <td>
-              <p><b>TODO!</b></p>
-              <p>Some object detection is possible to train separately.</p>
-              <p>Better off grabbing an existing model.</p>
-              <p>Or have your LLM include vision.</p>
+              <p>Better off grabbing an existing model that has vision.</p>
+              <p>Finetune if needed for self recongition.</p>
             </td>
           </tr>
           <tr>
             <th>Memory</th>
             <td>
+              <p><b>TODO!</b></p>
+              <p>Nothing in real time</p>
             </td>
             <td>
               <p><b>TODO!</b></p>
@@ -219,10 +213,11 @@
           <tr>
             <th>API</th>
             <td>
+              <p><b>Circular refrence</b></p>
             </td>
             <td>
               <p><b>TODO!</b></p>
-              <p>xdx</p>
+              <p>See if there is an MCP for whatever your looking to intergate with</p>
             </td>
             <td>
               <p>Not an AI question, hit the docs.</p>
@@ -230,12 +225,21 @@
             </td>
           </tr>
           <tr>
+            <th>Singing</p>
+            <td><p>N/A at the moment, though people are working on client-server vocal synthesis tools</p></td>
+            <td><p>pick any UTAU or DiffSinger, or use RVC, with RVC recommend using in combination with DiffSinger or SynthV for better quality results</p></td>
+            <td><p>DiffSinger allows for easily training high quality vocal synthesizers, even on low spec hardware, if your hardware is extremely low spec you can use UTAU for acceptable quality custom singing voice</p></td>
+          </tr>
+          <tr>
             <th>Movement</th>
             <td>
+                <p>Where</p>
             </td>
             <td>
+                <p>I guess Nvidia has some stuff. *did they ever release that?*</p>
             </td>
             <td>
+                <p>Lots and lots of pose data, that is all I can recommend</p>
             </td>
           </tr>
           <tr>

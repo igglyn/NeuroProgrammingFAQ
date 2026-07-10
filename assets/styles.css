@@ -7,7 +7,7 @@
   --color-bg: #0b0c11;
   --color-text-1: #d5dae2;
   --color-text-2: #8e98a4;
-  --color-text-3: #666e97;
+  --color-text-3: #777e97;
   --color-text-4: #4f5575;
   --color-marker-stroke: #e54c4c;
   --color-table-borders: var(--color-text-3);
@@ -162,17 +162,30 @@ tr:last-child td {
   border-bottom: none;
 }
 
+.neuro-parts tr th:nth-child(1) {
+    width: 100px;
+}
+.neuro-parts tr th:nth-child(2) {
+    width: 200px;
+}
+
+
 /* specific tables */
 /* neuro parts table */
 .neuro-parts tr th {
-  background-color: #136a;
+  background-color: #4484;
 }
 .neuro-parts tr td:nth-child(2) {
-  background-color: #024a;
+  background-color: #2224;
 }
 .neuro-parts tr td:nth-child(3) {
-  background-color: #202a;
+  background-color: #4484;
 }
+.neuro-parts tr td:nth-child(4) {
+  background-color: #2224;
+}
+
+
 
 /* top to bottom */
 .neuro-parts tr:nth-child(1) {
@@ -198,4 +211,7 @@ tr:last-child td {
 }
 .neuro-parts tr:nth-child(8) {
   background-color: #0238;
+}
+.neuro-parts tr:nth-child(9) {
+  background-color: #0058;
 }
